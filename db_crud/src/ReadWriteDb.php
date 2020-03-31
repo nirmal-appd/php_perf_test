@@ -182,7 +182,7 @@
     $insertData = [
         [213456,'Mr','Johnny','Depp','ScissorBay County',90123,'US','2020-03-21',1],
         [213456,'Mr','Heath','Ledger','Darkwoods County',90123,'US','2020-03-21',1],
-        [313452,'Mrs','Christian','Bale','Machine County',20121,'US','2020-03-20',1],
+        [313452,'Mr','Christian','Bale','Machine County',20121,'US','2020-03-20',1],
         [125456,'Ms','Jennifer','Aniston','Riverside County',30121,'US','2020-03-12',1]];
     $classObj1->insertIntoTable($preferredTable,$insertData);
 
