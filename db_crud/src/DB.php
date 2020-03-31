@@ -1,10 +1,9 @@
 <?php
 
-namespace db_crud;
 /*
 * Mysql database class - only one connection alowed
 */
-
+namespace db_crud;
 class DB {
 	private $connection;
 	private static $_instance;
@@ -43,4 +42,7 @@ class DB {
 		return $this->connection;
 	}
 }
+
+/* $db = DB::getInstance();
+$conn = $db->getConnection(); */
 ?>

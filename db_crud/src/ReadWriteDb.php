@@ -1,10 +1,17 @@
 <?php
     namespace db_crud;
-    
+    require_once "../../example/Psr4AutoloaderClass.php";
+
+    // instantiate the loader
+    $loader = new \Example\Psr4AutoloaderClass;
+    // register the autoloader
+    $loader->register();
+    // register the base directories for the namespace prefix
+    $loader->addNamespace('DB_CRUD', '/Library/WebServer/Documents/php_perf_test/db_crud/src/');
     ini_set('display_errors', 1);
     ini_set('display_startup_errors', 1);
     error_reporting(E_ALL);
-    include('./DB.php');
+    
 
     class ReadWriteDB {
 
@@ -157,11 +164,13 @@
         
     }
 
-    $db = DB::getInstance();
+    //Autoloader kicked into action
+    //$db = new \DB_CRUD\DB;
+    $db = \DB_CRUD\DB::getInstance();
     $conn = $db->getConnection();
 
     //create object for class
-    $classObj1 = new ReadWriteDB($conn,'employees');
+    $classObj1 = new \DB_CRUD\ReadWriteDB($conn,'employees');
     $preferredTable = $classObj1->getTable();
     
     //create table
