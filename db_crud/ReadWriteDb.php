@@ -1,8 +1,10 @@
 <?php
+    namespace db_crud;
+    
     ini_set('display_errors', 1);
     ini_set('display_startup_errors', 1);
     error_reporting(E_ALL);
-    include('./class.DB.php');
+    include('./DB.php');
 
     class ReadWriteDB {
 
@@ -30,7 +32,7 @@
         } */
 
         //Create table
-        public function createTable($tableName) {
+        public function createTable(string $tableName) {
             try {
                 $sql ="CREATE table $tableName(
                 empID BIGINT( 11 ) AUTO_INCREMENT PRIMARY KEY,
@@ -47,23 +49,23 @@
                 $this->dbHandler->exec($sql);
                 print("Created $tableName Table");echo "<br />\n";
             
-            } catch(PDOException $e) {
+            } catch(\PDOException $e) {
                 echo $e->getMessage();//Remove or change message in production code
             }
         }
 
         //DROP TABLE
-        public function dropTable($tableName) {
+        public function dropTable(string $tableName) {
             try {
                 $dropSql ="DROP table $tableName";
                 $this->dbHandler->exec($dropSql);
-            } catch(PDOException $e) {
+            } catch(\PDOException $e) {
                 print_r($e->getMessage());
             }
         }
 
         //Insert into table
-        public function insertIntoTable($tableName,$insertData) {
+        public function insertIntoTable(string $tableName,array $insertData) {
             
             $query = "INSERT INTO $tableName (empSapID,empPreName,empFirstName,
             empLastName,empCounty,empPostCode,empCountry,empRegDate,empStatus) VALUES "; //Prequery
@@ -87,14 +89,14 @@
                 $this->dbHandler->beginTransaction();
                 $stmt -> execute();
                 $this->dbHandler->commit();
-            }catch (Exception $e){
+            }catch (\Exception $e){
                 $this->dbHandler->rollback();
                 print_r($e->getMessage());
             }
         }
 
         //Read from table
-        public function readFromTable($tableName, $cols) {
+        public function readFromTable(string $tableName, array $cols) {
             $tableCols = implode(',',$cols);
             $data = $this->dbHandler->query("SELECT $tableCols FROM $tableName")->fetchAll();
             // and somewhere later:
@@ -104,7 +106,7 @@
         }
 
         //Update table
-        public function updateTable($preferredTable, $tableColToUpdate, $colValueToUpdate, $conditionForUpdate, $conditionParametersUpdate) {
+        public function updateTable(string $preferredTable, array $tableColToUpdate, array $colValueToUpdate, array $conditionForUpdate, array $conditionParametersUpdate) {
             if(count($tableColToUpdate) == count($colValueToUpdate)) {
                 $updateQuery = "UPDATE $preferredTable SET ";
                 for($i=0;$i<count($tableColToUpdate);$i++) {
@@ -126,14 +128,14 @@
                 $this->dbHandler->beginTransaction();
                 $this->dbHandler->prepare($updateQuery)->execute($conditionParametersUpdate);
                 $this->dbHandler->commit();
-            }catch(PDOException $e){
+            }catch(\PDOException $e){
                 $this->dbHandler->rollback();
                 print($e->getMessage());
             }
         }
 
         //Delete Table
-        public function deleteTable($preferredTable, $conditionForDelete, $conditionParametersDelete) {
+        public function deleteTable(string $preferredTable, array $conditionForDelete, array $conditionParametersDelete) {
             $deleteQuery = "DELETE from $preferredTable ";
             if($conditionForDelete){
                 if(count($conditionForDelete) > 1) {
@@ -147,13 +149,16 @@
                 $this->dbHandler->beginTransaction();
                 $this->dbHandler->prepare($deleteQuery)->execute($conditionParametersDelete);
                 $this->dbHandler->commit();
-            }catch(PDOException $e){
+            }catch(\PDOException $e){
                 $this->dbHandler->rollback();
                 print($e->getMessage());
             }
         }
         
     }
+
+    $db = DB::getInstance();
+    $conn = $db->getConnection();
 
     //create object for class
     $classObj1 = new ReadWriteDB($conn,'employees');

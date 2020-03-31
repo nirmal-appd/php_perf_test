@@ -1,4 +1,6 @@
 <?php
+
+namespace db_crud;
 /*
 * Mysql database class - only one connection alowed
 */
@@ -26,9 +28,9 @@ class DB {
 	// Constructor
 	private function __construct() {
 		try{
-			$this->connection = new PDO('mysql:host='.$this->dbhost.';dbname='.$this->dbname, $this->dbuser, $this->dbpass);
-			$this->connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-		}catch(PDOException $e){// Error handling
+			$this->connection = new \PDO('mysql:host='.$this->dbhost.';dbname='.$this->dbname, $this->dbuser, $this->dbpass);
+			$this->connection->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
+		}catch(\PDOException $e){// Error handling
 			die("Failed to connect to DB: ". $e->getMessage());
 		}
 	}
@@ -41,7 +43,4 @@ class DB {
 		return $this->connection;
 	}
 }
-
-$db = DB::getInstance();
-$conn = $db->getConnection();
 ?>
