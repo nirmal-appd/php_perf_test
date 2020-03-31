@@ -15,12 +15,12 @@ Following modules to be included:
 
 Run the application on your browser.
 Point to 
-1.  http://your-server-ip/class.ReadWriteDb.php
+1.  http://your-server-ip/php_perf_test/DB_CRUD/src/ReadWriteDb.php
 
 Following actions will be performed.
 Create Table
 Insert into Table
 Read from Table
-Delete table records
 Update table records
+Delete table records
 DROP Table
