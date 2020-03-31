@@ -8,6 +8,7 @@
 
         private $table;
         private $dbHandler;
+        //private $tableCols;
 
         //Constructor where table name is passed
         public function __construct($dbh,$tableName)
@@ -24,9 +25,8 @@
             return $this->tableCols;
         }
 
-        public function setTableCols() {
-            $this->tableCols = ['empID','empSapID','empPreName','empFirstName','empLastName','empCounty',
-            'empPostcode','empCountry','empRegDate','empStatus'];
+        public function setTableCols($tableColumns) {
+            $this->tableCols = $tableColumns;
         } */
 
         //Create table
