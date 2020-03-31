@@ -1,5 +1,8 @@
 <?php
     namespace db_crud;
+    /* ini_set('display_errors', 1);
+    ini_set('display_startup_errors', 1);
+    error_reporting(E_ALL); */
     require_once "../../example/Psr4AutoloaderClass.php";
 
     // instantiate the loader
@@ -8,9 +11,7 @@
     $loader->register();
     // register the base directories for the namespace prefix
     $loader->addNamespace('DB_CRUD', '/Library/WebServer/Documents/php_perf_test/db_crud/src/');
-    ini_set('display_errors', 1);
-    ini_set('display_startup_errors', 1);
-    error_reporting(E_ALL);
+    
     
 
     class ReadWriteDB {
@@ -179,8 +180,9 @@
     
     //insert table
     $insertData = [
-        [213456,'Mr','John','Doe','Darkwoods County',90123,'US','2020-03-21',1],
-        [313452,'Mrs','Jane','Roe','Bay County',20121,'US','2020-03-20',1],
+        [213456,'Mr','Johnny','Depp','ScissorBay County',90123,'US','2020-03-21',1],
+        [213456,'Mr','Heath','Ledger','Darkwoods County',90123,'US','2020-03-21',1],
+        [313452,'Mrs','Christian','Bale','Machine County',20121,'US','2020-03-20',1],
         [125456,'Ms','Jennifer','Aniston','Riverside County',30121,'US','2020-03-12',1]];
     $classObj1->insertIntoTable($preferredTable,$insertData);
 

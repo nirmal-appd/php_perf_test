@@ -42,7 +42,4 @@ class DB {
 		return $this->connection;
 	}
 }
-
-/* $db = DB::getInstance();
-$conn = $db->getConnection(); */
 ?>
