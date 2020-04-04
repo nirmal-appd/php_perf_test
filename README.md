@@ -14,7 +14,9 @@ Following modules to be included:
 3.  REST API Module - Not yet started
 
 Run the application on your browser.
-Point to 
+Point to the following endpoints:
+
+DB Module Endpoint
 1.  http://your-server-ip/php_perf_test/DB_CRUD/src/ReadWriteDb.php
 
 Following actions will be performed.
@@ -24,3 +26,11 @@ Read from Table,
 Update table records,
 Delete table records,
 DROP Table
+
+REDIS CACHE ENDPOINT
+2. http://your-server-ip/php_perf_test/REDIS/src/RedisOperations.php
+
+Following actions will be performed
+Write to Redis Cache
+Read from Redis-Cache
+Print Data
