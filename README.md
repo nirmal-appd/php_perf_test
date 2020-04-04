@@ -16,20 +16,25 @@ Following modules to be included:
 Run the application on your browser.
 Point to the following endpoints:
 
-DB Module Endpoint
+<b>DB Module Endpoint</b>
 
     1.  http://your-server-ip/php_perf_test/DB_CRUD/src/ReadWriteDb.php
 
 Following actions will be performed.
 
-Create Table, 
+Create Table,
+
 Insert into Table,
+
 Read from Table,
+
 Update table records,
+
 Delete table records,
+
 DROP Table
 
-REDIS CACHE ENDPOINT
+<b>REDIS CACHE ENDPOINT</b>
 
     2.  http://your-server-ip/php_perf_test/REDIS/src/RedisOperations.php
 
