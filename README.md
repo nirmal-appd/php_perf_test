@@ -7,6 +7,7 @@ Requisites to run the application
 1.  Apache Server set up to serve PHP files
 2.  PHP
 3.  MySQL Database installed on your end.
+4.  Redis Cache Server on default port 6379
 
 Following modules to be included:
 1.  DB Module which has a CRUD functionality - deployed
