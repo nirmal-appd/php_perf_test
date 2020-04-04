@@ -17,7 +17,7 @@ Run the application on your browser.
 Point to the following endpoints:
 
 DB Module Endpoint
-1.  http://your-server-ip/php_perf_test/DB_CRUD/src/ReadWriteDb.php
+    1.  http://your-server-ip/php_perf_test/DB_CRUD/src/ReadWriteDb.php
 
 Following actions will be performed.
 Create Table, 
@@ -28,9 +28,12 @@ Delete table records,
 DROP Table
 
 REDIS CACHE ENDPOINT
-2. http://your-server-ip/php_perf_test/REDIS/src/RedisOperations.php
+
+    2. http://your-server-ip/php_perf_test/REDIS/src/RedisOperations.php
 
 Following actions will be performed
 Write to Redis Cache
+
 Read from Redis-Cache
+
 Print Data
