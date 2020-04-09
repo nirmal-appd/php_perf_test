@@ -9,10 +9,10 @@ Requisites to run the application
 3.  MySQL Database installed on your end.
 4.  Redis Cache Server on default port 6379
 
-Following modules to be included:
-1.  DB Module which has a CRUD functionality - deployed
-2.  PHP-Redis Cache - under development/WIP
-3.  REST API Module - Not yet started
+Following modules have been included:
+1.  DB Module which has a CRUD functionality
+2.  PHP-Redis Cache
+3.  REST API Module
 
 Run the application on your browser.
 Point to the following endpoints:
@@ -39,10 +39,17 @@ DROP Table
 
     2.  http://your-server-ip/php_perf_test/REDIS/src/RedisOperations.php
 
-Following actions will be performed:
-
+Following actions can be performed:
 Write to Redis Cache
-
 Read from Redis-Cache
-
 Print Data
+
+
+<b>REST API ENDPOINT</b>
+    3.  http://your-server-ip/php_perf_test/rest_api/src/employee/read/1 //Only read URL provided here as sample
+
+Following actions can be performed
+Create Employee
+Read Employee
+Update Employee
+Delete Employee
