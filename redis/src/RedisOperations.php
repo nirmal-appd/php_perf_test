@@ -2,13 +2,13 @@
 namespace redis;
 
 require_once "../../example/Psr4AutoloaderClass.php";
-
+include "../../bootstrap.php";
 // instantiate the loader
 $loader = new \Example\Psr4AutoloaderClass;
 // register the autoloader
 $loader->register();
 // register the base directories for the namespace prefix
-$loader->addNamespace('REDIS', '/Library/WebServer/Documents/php_perf_test/redis/src/');
+$loader->addNamespace('REDIS', ROOT_DIR.'/redis/src/');
 
 
 class RedisOperations{

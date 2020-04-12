@@ -4,13 +4,13 @@
     ini_set('display_startup_errors', 1);
     error_reporting(E_ALL); */
     require_once "../../example/Psr4AutoloaderClass.php";
-
+    include "../../bootstrap.php";
     // instantiate the loader
     $loader = new \Example\Psr4AutoloaderClass;
     // register the autoloader
     $loader->register();
     // register the base directories for the namespace prefix
-    $loader->addNamespace('DB_CRUD', '/Library/WebServer/Documents/php_perf_test/db_crud/src/');
+    $loader->addNamespace('DB_CRUD', ROOT_DIR.'/db_crud/src/');
     
     
 
