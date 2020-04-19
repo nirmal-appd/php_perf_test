@@ -18,7 +18,7 @@ tar -xzvf $1
 cd $Dir_name
 
 #run install command
-./install.sh -a=e2e-customer@7ac19086-25d6-4c9c-b7cf-e0a2c85d309f -e /usr/lib64/php/modules -p /usr/bin/ -v 7.2 -s master-saas-controller.e2e.appd-test.com 443 phpDockExceptionTest_AppKn dockTierException_Kn dockNodeException_Kn
+./install.sh -e /usr/lib64/php/modules -p /usr/bin/ -v 7.2 -s master-saas-controller.e2e.appd-test.com 443 phpDockExceptionTest_AppKn dockTierException_Kn dockNodeException_Kn
 
 #run load for DB, redis and
 siege URL
