@@ -21,4 +21,4 @@ cd $Dir_name
 ./install.sh -e /usr/lib64/php/modules -p /usr/bin/ -v 7.2 -s $2 443 $3 $4 $5
 
 #run load for DB, redis and
-siege URL
+#siege URL
