@@ -8,7 +8,7 @@ then
     mkdir $dir
 fi
 
-cp $1 $dir
+mv $1 $dir
 cd $dir
 
 Dir_name=`tar -tzf $1 | head -1 | cut -f1 -d"/"`
@@ -19,6 +19,9 @@ cd $Dir_name
 
 #run install command
 ./install.sh -e /usr/lib64/php/modules -p /usr/bin/ -v 7.2 -s $2 443 $3 $4 $5
+
+#restart apache server
+apachectl restart
 
 #run load for DB, redis and
 #siege URL

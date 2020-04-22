@@ -7,6 +7,7 @@ dir = "/opt/appd/php_agent"
 cd $dir
 #shutdown server if running
 apachectl stop
+
 #run uninstall
 ./install.sh -u
 #delete agent install folder
