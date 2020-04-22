@@ -1,2 +1,3 @@
 ## add your ignores here.
-./.teamcity
+.vscode
+.teamcity
