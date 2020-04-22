@@ -40,16 +40,18 @@ DROP Table
     2.  http://your-server-ip/php_perf_test/REDIS/src/RedisOperations.php
 
 Following actions can be performed:
-Write to Redis Cache
-Read from Redis-Cache
+Write to Redis Cache,
+Read from Redis-Cache,
 Print Data
 
 
 <b>REST API ENDPOINT</b>
-    3.  http://your-server-ip/php_perf_test/rest_api/src/employee/read/1 //Only read URL provided here as sample
 
-Following actions can be performed
-Create Employee
-Read Employee
-Update Employee
+     3.  http://your-server-ip/php_perf_test/rest_api/src/employee/read/1 //Only read URL provided here as sample
+   
+
+Following actions can be performed:
+Create Employee,
+Read Employee,
+Update Employee,
 Delete Employee
